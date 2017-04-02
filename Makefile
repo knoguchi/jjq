@@ -3,10 +3,10 @@ ONIGURUMA_VERSION=5.9.6
 JQ_VERSION=1.5
 PLATFORM=$$(echo -n $$(uname)-$$(uname -m) | tr "[A-Z]" "[a-z]")
 
-.PHONY: fetch install build clen
+.PHONY: fetch install build clean
 
 build: target/jjq-$(JJQ_VERSION)-SNAPSHOT.jar
-	
+
 install: build
 	mvn install	
 
