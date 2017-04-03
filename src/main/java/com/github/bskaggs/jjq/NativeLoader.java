@@ -51,6 +51,13 @@ public class NativeLoader {
 			} else {
 				throw new UnsupportedOperationException("Platform " + osName + ":" + osArch + " not supported");
 			}
+		} else if (osName.startsWith("mac os x")) {
+			if (osArch.equalsIgnoreCase("x86_64")) {
+				name = "lib" + library + ".dylib";
+				path = "mac-x86_64/";
+			} else {
+				throw new UnsupportedOperationException("Platform " + osName + ":" + osArch + " not supported");
+			}
 		} else {
 			throw new UnsupportedOperationException("Platform " + osName + ":" + osArch + " not supported");
 		}
